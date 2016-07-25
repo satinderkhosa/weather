@@ -1,0 +1,108 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+        <script src="js/angular.min.js"></script>
+        
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <div class="container center" ng-app="app">
+            <div class="weather" ng-controller="myCtrl">
+                <div class="row">
+                    
+                    <form ng-submit="getWeather()">
+                      Enter City : <input type="text" ng-model="city"required/>
+                        
+          
+                      <input type="submit" id="submit" value="Submit" />
+                
+                    </form>
+                    
+                    
+                    
+                    <div class="col-md-12 center">
+                        <h2>{{weather.city.name}}, {{weather.city.country}}</h2>
+                        
+                        <h3>{{weather.list[0].temp.day - 273.15| number:2}}c</h3>
+
+                        <img src="http://openweathermap.org/img/w/{{weather.list[0].weather[0].icon}}.png" alt=""/>
+                        <div class="description">{{weather.list[0].weather[0].main}} | {{weather.list[0].weather[0].description}}</div>
+                        
+                        
+                        
+                        
+                    </div>
+                
+                </div>
+               
+                
+                
+                
+                
+                
+                <h2>7 Day forcast</h2>
+                <div class="row">
+                    
+                    <div class="col-md-3" ng-repeat="days in weather.list">
+                        
+                        <div class="temperature">
+                            
+                            <h4 class="weather-temp"> {{getDay($index)}} | {{days.temp.day - 273.15 | number:2}}c</h4>
+                            <div class="weather-main">{{days.weather[0].main}}</div>
+
+                            <div class="temp">
+                                <img src="http://openweathermap.org/img/w/{{days.weather[0].icon}}.png" alt="asd"/>
+                                <div class="high-low">
+                                    <span class="high">H: {{days.temp.max - 273.15 | number:2}}c</span>
+                                    <span class="low">L: {{days.temp.min - 273.15 | number:2}}c</span>
+                                </div>
+
+
+                            </div>
+
+                            <div class="description">{{days.weather[0].description}}</div>
+
+
+                        </div>
+
+                        
+                </div>
+                
+              
+                
+            </div>
+                
+               
+            
+            
+           
+        
+        </div>
+
+        <div
+        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+        <script src="js/main.js"></script>
+
+       
+    </body>
+</html>
+

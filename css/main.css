@@ -1,0 +1,19 @@
+.center {
+  text-align: center;
+}
+.description {
+  text-transform: capitalize;
+}
+.temp {
+  position: relative;
+  overflow: hidden;
+}
+.temp .high-low .high {
+  font-size: 1.1em;
+}
+.container {
+  padding-top: 20px;
+}
+.container .col-md-3 {
+  padding-bottom: 50px;
+}
